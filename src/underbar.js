@@ -155,6 +155,13 @@
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
   _.reduce = function(collection, iterator, accumulator) {
+    var previous = arguments.length === 3 ? accumulator : null;
+    var result;
+    _.each(collection, function(val, indexOrKey, collection) {
+      if (previous === null) { previous = collection[0]; return; }
+      previous = iterator(previous, val);
+    });
+    return previous;
   };
 
   // Determine if the array or object contains a given value (using `===`).
