@@ -96,6 +96,11 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
+    var result = [];
+    _.each(array.sort(), function(val, ind, arr) {
+      if (val !== arr[ind + 1]) { result.push(val) };
+    });
+    return result;
   };
 
 
