@@ -228,6 +228,15 @@
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
   _.defaults = function(obj) {
+    var objects = [].slice.call(arguments, 1);
+    _.each(objects, function(ob) {
+      for (var key in ob) {
+        if (!(key in obj)) {
+          obj[key] = ob[key];
+        }
+      }
+    });
+    return obj;
   };
 
 
