@@ -41,8 +41,8 @@ This is a project I completed as a student at Hack Reactor. The project is a min
 
 ### Testing
 
-Tests are made with the [Mocha](https://github.com/mochajs/mocha) testing framework.
-Test are located in the ./spec directory. To run the Just open the spec runner file with chrome.
+Tests were made with the [Mocha](https://github.com/mochajs/mocha) testing framework.
+Tests are located in the ./spec directory. To run just open the spec runner file with chrome.
 
 ```
 SpecRunner.html
